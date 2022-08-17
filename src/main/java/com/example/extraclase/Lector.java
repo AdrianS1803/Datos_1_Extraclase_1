@@ -1,6 +1,6 @@
 package com.example.extraclase;
 
-import com.example.extraclase.Student;
+
 
 import java.io. BufferedReader;
 import java.io.FileReader;
@@ -30,13 +30,23 @@ public class Lector {
     }
     public void create_student(int type){
         Student estudiante;
+
         if(type==1){
-            estudiante = new Student_1(partes[0],partes[1],partes[2],Integer.parseInt (partes[3]),partes[4],Integer.parseInt (partes[5]),4);
+            estudiante = new Student_1(partes[0],partes[1],partes[2],Integer.parseInt (partes[3]),partes[4],partes[5],
+                    Integer.parseInt (partes[6]),Integer.parseInt (partes[7]),Integer.parseInt (partes[8]),
+                    Integer.parseInt (partes[9]),Integer.parseInt (partes[10]),Integer.parseInt (partes[11]),0);
 
         }else{
-            estudiante = new Student_2(partes[0],partes[1],partes[2],Integer.parseInt (partes[3]),partes[4],Integer.parseInt (partes[5]),4);
+            estudiante = new Student_2(partes[0],partes[1],partes[2],Integer.parseInt (partes[3]),partes[4],partes[5],
+                    Integer.parseInt (partes[6]),Integer.parseInt (partes[7]),Integer.parseInt (partes[8]),
+                    Integer.parseInt (partes[9]),Integer.parseInt (partes[10]),Integer.parseInt (partes[11]),0);
         }
+        estudiante.getNota_promedio_examenes();
         lista_estudiante.add(estudiante);
         estudiante.imprimir();
+    }
+
+    public List<Student> getLista_estudiante() {
+        return lista_estudiante;
     }
 }

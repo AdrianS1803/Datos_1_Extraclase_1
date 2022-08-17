@@ -6,6 +6,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+
+
+
+
 import java.io.IOException;
 
 public class HelloApplication extends Application {
@@ -16,26 +23,16 @@ public class HelloApplication extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
+
     }
 
     public static void main(String[] args) {
-        Lector lectos_csv = new Lector();
-        lectos_csv.leerArchivo("C:\\Users\\Adrian\\Desktop\\TEC\\II Semestre\\Algoritmos y Estructuras de Datos\\Students_csv.csv");
-        prb sebas = new prb();
-        System.out.println(sebas.lak);
+        /*Lector lector_csv = new Lector();
+        lector_csv.leerArchivo("C:\\Users\\Adrian\\Desktop\\TEC\\II Semestre\\Algoritmos y Estructuras de Datos\\Students_csv.csv");*/
 
-        /*List myList = new ArrayList();
-        String carnet = "578";
-        myList.add(carnet);
-        myList.add("juan");
-        myList.add(5);
-        //Student est1 = new Student("2022", "marco");
-        //Student_1 est2 = new Student_1("2044","maria",6);
-        Student est3 = new Student(myList);
-        System.out.println(myList);
-        est3.imprimir();*/
 
         launch();
 
     }
 }
+

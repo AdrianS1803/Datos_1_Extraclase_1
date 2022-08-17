@@ -3,17 +3,25 @@ package com.example.extraclase;
 import com.example.extraclase.Student;
 
 public class Student_2 extends Student {
-    int nota1;
-    //int nota2;
-    //int nota3;
+    int nota_promedio_proyecto;
 
-    public Student_2(String carne, String nombre_apellido, String correo, int numero, String nickname, int tipo_student, int nota1){
-        super(carne,nombre_apellido,correo,numero,nickname,tipo_student);
-        this.nota1=nota1;
+    public Student_2(String carne, String nombre_apellido, String correo, int numero, String nickname, String tipo_student,
+                     int nota_promedio_examenes, int nota_promedio_quices, int nota_promedio_tareas,
+                     int nota_proyecto_1, int nota_proyecto_2, int nota_proyecto_3, int nota_promedio_proyecto){
 
+        super(carne,nombre_apellido,correo,numero,nickname,tipo_student,
+                nota_promedio_examenes,nota_promedio_quices,nota_promedio_tareas,
+                nota_proyecto_1,nota_proyecto_2,nota_proyecto_3);
+
+        this.nota_promedio_proyecto=nota_promedio_proyecto;
     }
     @Override
     public void imprimir() {
-        System.out.println("Soy estudiante tipo 2 "+this.tipo_student+""+super.carne+" "+super.nombre_apellido+" "+super.correo+""+super.numero+""+this.nickname+""+this.tipo_student+""+this.nota1);
+        System.out.println("Soy estudiante tipo 2 "+calc_nota_promedio_proyecto());
     }
+    public int calc_nota_promedio_proyecto() {
+        nota_promedio_proyecto=(getNota_proyecto_1()+getNota_proyecto_2()+getNota_proyecto_3())/3;
+        return nota_promedio_proyecto;
+    }
+    public int getNota_promedio_proyecto(){return nota_promedio_proyecto;}
 }
