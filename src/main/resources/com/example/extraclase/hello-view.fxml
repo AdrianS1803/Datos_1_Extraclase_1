@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.extraclase.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
+<VBox alignment="CENTER" prefHeight="697.0" prefWidth="1229.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.extraclase.HelloController">
 
     <Label fx:id="welcomeText" onDragDetected="#onHelloButtonClick" />
     <Button onAction="#onHelloButtonClick" text="Hello!" />
@@ -26,4 +22,15 @@
          <Label alignment="CENTER" contentDisplay="CENTER" text="Label" textAlignment="CENTER" />
       </children>
    </GridPane>
+   <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <children>
+         <TableView prefHeight="200.0" prefWidth="1061.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+           <columns>
+             <TableColumn prefWidth="75.0" text="C1" />
+             <TableColumn prefWidth="75.0" text="C2" />
+               <TableColumn prefWidth="75.0" text="Column X" />
+           </columns>
+         </TableView>
+      </children>
+   </AnchorPane>
 </VBox>

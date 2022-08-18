@@ -1,8 +1,7 @@
 package com.example.extraclase;
 
-import com.example.extraclase.Student;
-
 public class Student_1 extends Student {
+
     private int nota_promedio;
 
 

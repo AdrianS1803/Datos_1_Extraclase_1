@@ -16,6 +16,10 @@ public class Student {
     private int nota_proyecto_2;
     private int nota_proyecto_3;
 
+    //No seguro si es valido
+
+    private int promedio;
+
 
     public Student(String carne, String nombre_apellido, String correo, int numero, String nickname, String tipo_student,
                    int nota_promedio_examenes, int nota_promedio_quices, int nota_promedio_tareas,
@@ -32,6 +36,7 @@ public class Student {
         this.nota_proyecto_1 = nota_proyecto_1;
         this.nota_proyecto_2 = nota_proyecto_2;
         this.nota_proyecto_3 = nota_proyecto_3;
+
     }
 
     public String getCarne() {
@@ -47,7 +52,7 @@ public class Student {
 
     public int getNota_promedio_examenes(){return nota_promedio_examenes;}
     public int getNota_promedio_quices(){return nota_promedio_quices;}
-    public int getNota_promedio_tareas(){return nota_promedio_quices;}
+    public int getNota_promedio_tareas(){return nota_promedio_tareas;}
     public int getNota_proyecto_1(){return nota_proyecto_1;}
     public int getNota_proyecto_2(){return nota_proyecto_2;}
     public int getNota_proyecto_3(){return nota_proyecto_3;}
