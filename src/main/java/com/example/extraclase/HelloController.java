@@ -60,58 +60,57 @@ public class HelloController implements Initializable {
     private TableColumn<Student, Integer> promedio;
 
     @FXML
-    private TableColumn<Student_1, Integer> ex_qu_ta;
+    private TableColumn<Student_1, Float> ex_qu_ta;
 
     @FXML
-    private TableColumn<Student_2, Integer> preojects;
+    private TableColumn<Student_2, Float> projects;
 
     @FXML
     private TableColumn<Student, Integer> final_grade;
 
-
-    @FXML
-    private Label welcomeText;
-    @FXML
-    private Label prueba;
-
     private ObservableList<Student> list = FXCollections.observableArrayList();
 
-    public void correr(){
+
+
+    public void add_student() {
         Lector lector_csv = new Lector();
         lector_csv.leerArchivo("C:\\Users\\Adrian\\Desktop\\TEC\\II Semestre\\Algoritmos y Estructuras de Datos\\Students_csv.csv");
 
-        //System.out.println(lector_csv.datos());Es este metedo el que no funciona
+        for (int i=0;i<1;i++) //que se por la extencion del csv
+            list.add((Student) lector_csv.getLista_estudiantes().get(i));
 
-
-        /*Student estudiante = new Student("21315",/*(String) lector_csv.datos().get(0), (String) lector_csv.datos().get(1), (String) lector_csv.datos().get(2), (Integer) lector_csv.datos().get(3),
-                (Integer) lector_csv.datos().get(4), (String) lector_csv.datos().get(5),
-                (Integer) lector_csv.datos().get(6),lector_csv.datos().get(7),lector_csv.datos().get(8),
-                lector_csv.datos().get(9),lector_csv.datos().get(10),lector_csv.datos().get(11));
-        new Student("2022464612","Joshua Beltran Delgado", "joshbel@estudiantec.cr",87923666, "joshbel","2",
-                100,100,100,
-                100,100,100);*/
-        //list.add(estudiante);
     }
-
-
-
-
-
-
-
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        correr();
+
+        add_student();
         carne.setCellValueFactory(new PropertyValueFactory<Student,String>("carne"));
+        name.setCellValueFactory(new PropertyValueFactory<Student,String>("nombre_apellido"));
+        mail.setCellValueFactory(new PropertyValueFactory<Student,String>("correo"));
+        phone.setCellValueFactory(new PropertyValueFactory<Student, Integer>("numero"));
+        nombre_usuario.setCellValueFactory(new PropertyValueFactory<Student,String>("nickname"));
+        type.setCellValueFactory(new PropertyValueFactory<Student,String>("tipo_student"));
+        exam.setCellValueFactory(new PropertyValueFactory<Student,Integer>("nota_promedio_examenes"));
+        quiz.setCellValueFactory(new PropertyValueFactory<Student,Integer>("nota_promedio_quices"));
+        homework.setCellValueFactory(new PropertyValueFactory<Student,Integer>("nota_promedio_tareas"));
+        project_1.setCellValueFactory(new PropertyValueFactory<Student,Integer>("nota_proyecto_1"));
+        project_2.setCellValueFactory(new PropertyValueFactory<Student,Integer>("nota_proyecto_2"));
+        project_3.setCellValueFactory(new PropertyValueFactory<Student,Integer>("nota_proyecto_3"));
+
+        final_grade.setCellValueFactory(new PropertyValueFactory<Student,Integer>("promedio"));
+
+        try {ex_qu_ta.setCellValueFactory(new PropertyValueFactory<Student_1,Float>("nota_promedio_ex_qu_ta"));
+        }catch (Exception e){
+            System.out.println("mal");
+        } //Error, solucionar
+            //ex_qu_ta.setCellValueFactory(new PropertyValueFactory<Student_1,Float>("nota_promedio_ex_qu_ta"));}
+            //projects.setCellValueFactory(new PropertyValueFactory<Student_2,Float>("nota_promedio_proyecto"))*/
+
+
+
 
         table.setItems(list);
-
     }
-
-
-
 
     }

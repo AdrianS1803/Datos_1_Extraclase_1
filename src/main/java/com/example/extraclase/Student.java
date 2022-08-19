@@ -16,9 +16,7 @@ public class Student {
     private int nota_proyecto_2;
     private int nota_proyecto_3;
 
-    //No seguro si es valido
-
-    private int promedio;
+    private float promedio;
 
 
     public Student(String carne, String nombre_apellido, String correo, int numero, String nickname, String tipo_student,
@@ -36,6 +34,7 @@ public class Student {
         this.nota_proyecto_1 = nota_proyecto_1;
         this.nota_proyecto_2 = nota_proyecto_2;
         this.nota_proyecto_3 = nota_proyecto_3;
+        this.promedio=calc_nota_promedio();
 
     }
 
@@ -57,11 +56,15 @@ public class Student {
     public int getNota_proyecto_2(){return nota_proyecto_2;}
     public int getNota_proyecto_3(){return nota_proyecto_3;}
 
+    public float getPromedio(){return promedio;}
+
 
     public void imprimir(){
         System.out.println("Canet:"+this.carne+" Nombre: "+this.nombre_apellido+" Correo: "+this.correo+" Numero: "+this.numero);
-
     }
-
-
+    public float calc_nota_promedio(){
+        this.promedio=((getNota_promedio_examenes()+getNota_promedio_quices()+getNota_promedio_tareas()+
+                getNota_proyecto_1()+getNota_proyecto_2()+getNota_proyecto_3()))/6;
+        return this.promedio;
+    }
 }
