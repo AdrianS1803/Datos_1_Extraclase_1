@@ -16,7 +16,11 @@ public class Student {
     private int nota_proyecto_2;
     private int nota_proyecto_3;
 
+    protected float nota_promedio_ex_qu_ta=0;
+    protected float nota_promedio_proyecto=0;
+
     private float promedio;
+    protected float nota_promedio_tipo_estudiante;
 
 
     public Student(String carne, String nombre_apellido, String correo, int numero, String nickname, String tipo_student,
@@ -35,7 +39,6 @@ public class Student {
         this.nota_proyecto_2 = nota_proyecto_2;
         this.nota_proyecto_3 = nota_proyecto_3;
         this.promedio=calc_nota_promedio();
-
     }
 
     public String getCarne() {
@@ -56,6 +59,9 @@ public class Student {
     public int getNota_proyecto_2(){return nota_proyecto_2;}
     public int getNota_proyecto_3(){return nota_proyecto_3;}
 
+    public float getNota_promedio_proyecto(){return nota_promedio_proyecto;}
+    public float getNota_promedio_ex_qu_ta(){return nota_promedio_ex_qu_ta;}
+
     public float getPromedio(){return promedio;}
 
 
@@ -66,5 +72,9 @@ public class Student {
         this.promedio=((getNota_promedio_examenes()+getNota_promedio_quices()+getNota_promedio_tareas()+
                 getNota_proyecto_1()+getNota_proyecto_2()+getNota_proyecto_3()))/6;
         return this.promedio;
+    }
+    public float calc_nota_promedio_tipo_estudiante(){
+        nota_promedio_tipo_estudiante=0;
+        return nota_promedio_tipo_estudiante;
     }
 }

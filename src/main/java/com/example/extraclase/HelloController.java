@@ -1,11 +1,9 @@
 package com.example.extraclase;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -57,9 +55,6 @@ public class HelloController implements Initializable {
     private TableColumn<Student, Integer> project_3;
 
     @FXML
-    private TableColumn<Student, Integer> promedio;
-
-    @FXML
     private TableColumn<Student_1, Float> ex_qu_ta;
 
     @FXML
@@ -76,7 +71,7 @@ public class HelloController implements Initializable {
         Lector lector_csv = new Lector();
         lector_csv.leerArchivo("C:\\Users\\Adrian\\Desktop\\TEC\\II Semestre\\Algoritmos y Estructuras de Datos\\Students_csv.csv");
 
-        for (int i=0;i<1;i++) //que se por la extencion del csv
+        for (int i=0;i<2;i++) //que se por la extencion del csv
             list.add((Student) lector_csv.getLista_estudiantes().get(i));
 
     }
@@ -98,14 +93,14 @@ public class HelloController implements Initializable {
         project_2.setCellValueFactory(new PropertyValueFactory<Student,Integer>("nota_proyecto_2"));
         project_3.setCellValueFactory(new PropertyValueFactory<Student,Integer>("nota_proyecto_3"));
 
+        ex_qu_ta.setCellValueFactory(new PropertyValueFactory<Student_1,Float>("nota_promedio_ex_qu_ta"));
+        projects.setCellValueFactory(new PropertyValueFactory<Student_2,Float>("nota_promedio_proyecto"));
+
+
+
         final_grade.setCellValueFactory(new PropertyValueFactory<Student,Integer>("promedio"));
 
-        try {ex_qu_ta.setCellValueFactory(new PropertyValueFactory<Student_1,Float>("nota_promedio_ex_qu_ta"));
-        }catch (Exception e){
-            System.out.println("mal");
-        } //Error, solucionar
-            //ex_qu_ta.setCellValueFactory(new PropertyValueFactory<Student_1,Float>("nota_promedio_ex_qu_ta"));}
-            //projects.setCellValueFactory(new PropertyValueFactory<Student_2,Float>("nota_promedio_proyecto"))*/
+
 
 
 
